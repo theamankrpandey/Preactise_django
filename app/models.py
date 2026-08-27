@@ -10,3 +10,11 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Item(models.Model):
+    Name = models.CharField(max_length=30)
+    Quantity = models.IntegerField()
+
+    def __str__(self):
+        return self.Name

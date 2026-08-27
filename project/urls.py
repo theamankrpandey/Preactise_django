@@ -19,6 +19,9 @@ from django.urls import path
 from app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('stui/', stui,name='stui'),
-    path('stu/<int:pk>/', stu,name='stu'),
+    # path('stui/', stui,name='stui'),
+    # path('stu/<int:pk>/', stu,name='stu'),
+    path("product/", product,name="product"),
+    path("cart/<int:pk>/", cart,name="cart"),
+    path("Decrement/", Decrement,name="Decrement"),
 ]

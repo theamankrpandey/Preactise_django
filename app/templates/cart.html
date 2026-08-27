@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Cart</h1>
+    <h1>{{ cart_count }}</h1>
+    <button>Increment</button>
+    <br/>
+    <form method="POST" action="{% url 'Decrement' %}">
+    {% csrf_token %}
+    <button>Decrement</button>
+</form>
+    <br/>
+    {% for i in item %}
+        <p>{{ i.Name }}</p>
+        <p>{{ i.Quantity }}</p>
+        <br/>
+        <form action="{% url 'cart' i.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Add to Cart</button>
+        </form>
+    {% endfor %}
+</body>
+</html>
+
