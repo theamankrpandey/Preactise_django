@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import JsonResponse
 import json
 from .models import *
@@ -103,4 +103,13 @@ def Decrement(req):
     else:
         if req.session['cart_count']>0:
             req.session['cart_count'] -=1
+    return render(req,"cart.html",{"cart_count":req.session['cart_count']})
+
+
+def Increment(req):
+    if "cart_count" not in req.session:
+        req.session['cart_count'] = 0
+    else:
+        if req.session['cart_count']>0:
+            req.session['cart_count'] +=1
     return render(req,"cart.html",{"cart_count":req.session['cart_count']})

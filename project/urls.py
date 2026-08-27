@@ -24,4 +24,5 @@ urlpatterns = [
     path("product/", product,name="product"),
     path("cart/<int:pk>/", cart,name="cart"),
     path("Decrement/", Decrement,name="Decrement"),
+    path("Increment/", Increment,name="Increment"),
 ]

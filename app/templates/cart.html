@@ -8,7 +8,10 @@
 <body>
     <h1>My Cart</h1>
     <h1>{{ cart_count }}</h1>
-    <button>Increment</button>
+    <form method = "POST" action="{% url 'Increment' %}">
+        {% csrf_token %}
+        <button>Increment</button>
+    </form>
     <br/>
     <form method="POST" action="{% url 'Decrement' %}">
     {% csrf_token %}
