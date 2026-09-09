@@ -21,8 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('stui/', stui,name='stui'),
     # path('stu/<int:pk>/', stu,name='stu'),
-    path("product/", product,name="product"),
-    path("cart/<int:pk>/", cart,name="cart"),
-    path("Decrement/", Decrement,name="Decrement"),
-    path("Increment/", Increment,name="Increment"),
+    # path("product/", product,name="product"),
+    # path("cart/<int:pk>/", cart,name="cart"),
+    # path("Decrement/", Decrement,name="Decrement"),
+    # path("Increment/", Increment,name="Increment"),
+    path("item/<int:pk>/",item,name='item')
 ]
